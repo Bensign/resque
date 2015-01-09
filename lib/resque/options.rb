@@ -29,7 +29,7 @@ module Resque
 
     # @return [Boolean]
     def fork_per_job
-      self[:fork_per_job]
+      false
     end
 
     # @return [Hash<#to_sym,Object>]
@@ -51,7 +51,7 @@ module Resque
         # Path to file file where worker's pid will be save
         :pid_file => nil,
         # Use fork(2) on performing jobs
-        :fork_per_job => true,
+        :fork_per_job => false,
         # When set to true, forked workers will exit with `exit`, calling any `at_exit` code handlers that have been
         # registered in the application. Otherwise, forked workers exit with `exit!`
         :run_at_exit_hooks => false,
